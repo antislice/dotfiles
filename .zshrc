@@ -34,6 +34,7 @@ PROMPT='$(prompt_command)'
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export NODE_PATH="/usr/local/lib/node"
 PATH=$PATH:/usr/local/share/npm/bin
+PATH=$PATH:/usr/gosu-1.2-full/gosu-1.2/bin
 alias gits='git status'
 alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
