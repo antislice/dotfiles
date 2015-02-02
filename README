@@ -1,2 +1,5 @@
 . files
 on github to make this changing computers thing easier next time
+
+switch to zsh: chsh -s /bin/zsh
+
