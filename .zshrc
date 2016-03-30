@@ -29,6 +29,9 @@ prompt_command() {
 %#> "
 }
 
+# change tab/window title to show PWD
+precmd () {print -Pn "\e]0;%~\a"}
+
 PROMPT='$(prompt_command)'
 
 export NODE_PATH="/usr/local/lib/node"
@@ -40,3 +43,8 @@ alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/ser
 alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.zhistory
+setopt HIST_IGNORE_ALL_DUPS
