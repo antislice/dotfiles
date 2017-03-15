@@ -4,6 +4,10 @@ compinit
 promptinit
 setopt prompt_subst
 
+# turn off errors if a pattern for a filename generation doesn't have a match
+# allows me to use rake task arguments without escaping the [ ]s
+unsetopt nomatch
+
 prompt_command() {
     # %{ and %} act as markup indicators, so the colors don't screw up the spacing
 
@@ -42,9 +46,15 @@ alias gits='git status'
 alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
+export PYENV_ROOT=/usr/local/var/pyenv
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zhistory
 setopt HIST_IGNORE_ALL_DUPS
+
+eval $(docker-machine env)
+
+export OCI_DIR=$(brew --prefix)/lib
