@@ -46,7 +46,11 @@ alias gits='git status'
 alias pg-start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pg-stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
-export PYENV_ROOT=/usr/local/var/pyenv
+# export PYENV_ROOT=/usr/local/var/pyenv
+
+# path for brew-installed python 2
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
