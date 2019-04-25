@@ -26,10 +26,13 @@ prompt_command() {
     if [ ${changes} -eq 0 ]; then
       dirty=""
     else
-      dirty="%{$fg[red]%}*%{$reset_color%}"
+      dirty="%{$fg_bold[red]%}*%{$reset_color%}"
     fi
+    
+    time="%{$fg[blue]%}[%*]%{$reset_color%}"
+    
     # echo is how I got it to return a value
-    echo "%U@%m/%~%u${branch}${dirty} 
+    echo "${time} %U@%m/%~%u${branch}${dirty}
 %#> "
 }
 
